@@ -30,19 +30,19 @@ export default function Bookmark ({
         />
         <a href={bookmark.url} target='_blank' rel='noreferrer'>
            {bookmark.title}</a>
-        <Button style={{ width: '18rem' }}
+        <Button style={{  marginLeft:'28%', marginRight:'32%',justifyContent: 'center', padding: '1rem', marginBottom: '5%', marginTop: '5%' }}
           onClick={() => deleteBookmark(bookmark._id)}
         >
           Delete Me
         </Button>
       </Card>
-      <audio
+      {/* <audio
       controls
       src="https://api.dictionaryapi.dev/media/pronunciations/en/button-us.mp3"
       >
       Your browser does not support the
       <code>audio</code> element.
-</audio>
+</audio> */}
     </>
   )
 }

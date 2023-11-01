@@ -37,6 +37,7 @@ Card{
   flex-direction: row;
   justify-content: space-around;
   margin-top: 4rem;
+  background-image: url(./cannystripersbg.png)
 }
 @keyframes App-logo-spin {
   from {

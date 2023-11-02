@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-image: url(./cannystripersbg.png);
+  background-image: url(./stripes.png);
 }
 
 .App-logo {
@@ -37,7 +37,7 @@ Card{
   flex-direction: row;
   justify-content: space-around;
   margin-top: 4rem;
-  background-image: url(./cannystripersbg.png)
+  background-image: url(./bgFinal.png)
 }
 @keyframes App-logo-spin {
   from {

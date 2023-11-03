@@ -47,7 +47,7 @@ const ResourcePage = () => {
      <a href="https://cannacon.org/15-terpenes-cannabis-explained/">15 terpenes in cannabis explained [Updated 2023]</a>
      </div>
      <div>
-   
+   <Table data={terpines}/>
      </div>
      </div>
      

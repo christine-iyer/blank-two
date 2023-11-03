@@ -156,3 +156,4 @@ const terpines = [
           "strains": ""
      }
 ]
+export default terpines;

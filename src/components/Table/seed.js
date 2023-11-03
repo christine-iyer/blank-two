@@ -1,4 +1,4 @@
-[
+const terpines = [
      {
           "name": "Myrcene",
           "nose": "Earthy, hoppy, mango, and lemongrass.",

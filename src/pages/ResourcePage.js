@@ -1,9 +1,10 @@
-
+import Table from '../components/Table/Table'
 import terpines from "../terpines.png"
 
 const ResourcePage = () => {
 
   return (
+    <div>
     <div>
      <span><b>Terpines: </b><p>(C<sub>5</sub>H<sub>8</sub>)<sub>n</sub> where n represents the number of isoprene units they contain. Isoprene units are the building blocks of terpenes.</p></span>
    Unsaturated Hydrocarbons produced plants, particularly conifers.
@@ -45,6 +46,11 @@ const ResourcePage = () => {
      <br></br>
      <a href="https://cannacon.org/15-terpenes-cannabis-explained/">15 terpenes in cannabis explained [Updated 2023]</a>
      </div>
+     <div>
+   
+     </div>
+     </div>
+     
   )
 }
 

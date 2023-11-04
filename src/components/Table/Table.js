@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-const terpines = require('./seed')
+const terpData= require('./seed')
 
 
 export const COLUMNS = [
@@ -38,7 +38,7 @@ export default function Terpines() {
 
 
     // index
-    const getNewAccts = async () => {
+    const getTerpines = async () => {
         try {
             const response = await fetch('/api/terpines')
             const data = await response.json()
@@ -48,7 +48,7 @@ export default function Terpines() {
         }
     }
     // delete
-    const deleteNewAcct = async (id) => {
+    const deleteTerpine = async (id) => {
         try {
             const response = await fetch(`/api/terpines/${id}`, {
                 method: "DELETE",
@@ -63,7 +63,7 @@ export default function Terpines() {
         }
     }
     // update
-    const updateNewAcct = async (id, updatedData) => {
+    const updateTerpine = async (id, updatedData) => {
         try {
             const response = await fetch(`/api/terpines/${id}`, {
                 method: "PUT",
@@ -79,7 +79,7 @@ export default function Terpines() {
         }
     }
     // create
-    const createNewAcct = async () => {
+    const createTerpine = async () => {
         try {
             const response = await fetch(`/api/terpines`, {
                 method: "POST",
@@ -101,7 +101,7 @@ export default function Terpines() {
         }
     }
     useEffect(() => {
-        getNewAccts()
+        getTerpines()
     }, [foundTerpine])
 
     return (
@@ -110,7 +110,7 @@ export default function Terpines() {
             {'Nose '}<input value={terpine.nose} onChange={handleChange} name="nose"></input><br />
             {'Properties '}<input value={terpine.properties} onChange={handleChange} name="properties"></input><br />
             {'Strains '}<input value={terpine.strains} onChange={handleChange} name="strains"></input><br />
-             <button onClick={() => createNewAcct()}>Create A New New Acct</button>
+             <button onClick={() => createTerpine()}>Create A New New Acct</button>
             {
                 foundTerpine ? <div>
                     <h2>{foundTerpine.name}</h2>
@@ -126,25 +126,29 @@ export default function Terpines() {
                     {
                         terpines.map((terpine) => {
                             return (
-                                <div key={terpine._id}>
+                                
+
+
+                            
                                     <table>
-                                        <thead>
-                                            <tr >
-                                                <td>  {terpine.name}  </td>
-                                                <td>  {terpine.nose} </td>
-                                                <td>{terpine.properties}   </td>
-                                                <td> {terpine.strains}  </td>
+                                        <tbody>
+                                            {terpData.map(terp)=> 
+                                            <tr key={terp._id}>
+                                                <td>  {terp.name}  </td>
+                                                <td>  {terp.nose} </td>
+                                                <td>{terp.properties}   </td>
+                                                <td> {terp.strains}  </td>
                                                
-                                                <td> <button onClick={() => deleteNewAcct(terpine._id)}>X</button> </td>
-                                                <td>  <button onClick={() => updateNewAcct(terpine._id)}>Edit</button> </td>
-                                            </tr>
-                                        </thead>
+                                                <td> <button onClick={() => deleteTerpine(terpine._id)}>X</button> </td>
+                                                <td>  <button onClick={() => updateTerpine(terpine._id)}>Edit</button> </td>
+                                            </tr>}
+                                        </tbody>
                                     </table>
-                                </div>
+                            
                             )
                         })
                     }
-                </ul>) : <h1>No Expenses Yet Add One</h1>
+                </ul>) : <h1>Add Terpines</h1>
             }
         </>
     )

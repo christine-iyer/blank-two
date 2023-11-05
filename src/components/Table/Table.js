@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-const terpData= require('./seed')
+const terpData= require('../../../models/seed')
 
 
 export const COLUMNS = [

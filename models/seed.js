@@ -1,3 +1,8 @@
+require ('dotenv').config()
+const db = require('./db')
+const Terpine = require('./terpine')
+
+
 const terpines = [
      {
           "name": "Myrcene",
@@ -156,4 +161,18 @@ const terpines = [
           "strains": ""
      }
 ]
-export default terpines;
+Terpine.deleteMany({})
+    .then(() => {
+      Terpine.create(terpines)
+        .then((createdTerpine) => {
+            console.log('created terps:', createdTerpine)
+            db.close()
+        })
+        .catch(err => {
+            console.log(err)
+            db.close()
+        })  
+    }).catch(err => {
+        console.log(err)
+        db.close()
+    })

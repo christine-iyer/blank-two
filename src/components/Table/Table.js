@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef } from 'react'
-const terpData= require('../../../models/seed')
+import { useState, useEffect } from 'react'
 
 
-export const COLUMNS = [
+
+ const COLUMNS = [
     {
         Header: 'Name',
         accessor: 'name',
@@ -29,8 +29,6 @@ export default function Terpines() {
         properties: '',
         strains: ''
     })
-    const ref = useRef(null)
-    const inputRef = useRef(null)
     
     const handleChange = (evt) => {
         setTerpine({ ...terpine, [evt.target.name]: evt.target.value })
@@ -73,7 +71,11 @@ export default function Terpines() {
                 body: JSON.stringify({ updatedData })
             })
             const data = await response.json()
-            setFoundTerpine(data)
+            const terpinesCopy = [...terpines]
+      const index = terpinesCopy.findIndex(terpine => id === terpine._id)
+      terpinesCopy[index] = { ...terpinesCopy[index], ...updatedData }
+      setTerpines(terpinesCopy)
+
         } catch (error) {
             console.error(error)
         }
@@ -121,35 +123,7 @@ export default function Terpines() {
                 </div> : <>No New Terpoines Found </>
             }
             <hr></hr>
-            {
-                terpines && terpines.length ? (<ul>
-                    {
-                        terpines.map((terpine) => {
-                            return (
-                                
-
-
-                            
-                                    <table>
-                                        <tbody>
-                                            {terpData.map(terp)=> 
-                                            <tr key={terp._id}>
-                                                <td>  {terp.name}  </td>
-                                                <td>  {terp.nose} </td>
-                                                <td>{terp.properties}   </td>
-                                                <td> {terp.strains}  </td>
-                                               
-                                                <td> <button onClick={() => deleteTerpine(terpine._id)}>X</button> </td>
-                                                <td>  <button onClick={() => updateTerpine(terpine._id)}>Edit</button> </td>
-                                            </tr>}
-                                        </tbody>
-                                    </table>
-                            
-                            )
-                        })
-                    }
-                </ul>) : <h1>Add Terpines</h1>
-            }
+            
         </>
     )
 }

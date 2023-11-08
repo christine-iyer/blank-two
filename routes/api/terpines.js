@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const terpineCtrl = require('../../controllers/api/terpine')
+const terpineCtrl = require('../../controllers/api/terpines')
 
 router.delete('/:id', terpineCtrl.destroyTerpine, terpineCtrl.respondWithTerpine)
 router.put('/:id', terpineCtrl.updateTerpine, terpineCtrl.respondWithTerpine)

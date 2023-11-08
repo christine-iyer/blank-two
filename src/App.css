@@ -39,6 +39,10 @@ Card{
   margin-top: 4rem;
   background-image: url(./bgFinal.png)
 }
+Table, th, td {
+  border:1px solid black;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

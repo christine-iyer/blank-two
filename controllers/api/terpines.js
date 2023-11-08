@@ -1,5 +1,5 @@
 require('dotenv').config()
-const Terpine = require('../../models/terpineSchema')
+const Terpine = require('../../models/terpine')
 
 const destroyTerpine = async (req, res, next) => {
     try {

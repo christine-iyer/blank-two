@@ -1,6 +1,9 @@
 .App {
   text-align: center;
   background-image: url(./stripes.png);
+  display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .App-logo {
@@ -40,7 +43,17 @@ Card{
   background-image: url(./bgFinal.png)
 }
 Table, th, td {
-  border:1px solid black;
+  border: 2px solid forestgreen;
+    width: 800px;
+    justify-content: left;
+
+}
+th {
+  border-bottom: 1px solid black;
+}
+
+td {
+  text-align: center;
 }
 
 @keyframes App-logo-spin {

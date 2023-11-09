@@ -17,8 +17,6 @@ export default function Terpines() {
         setTerpine({ ...terpine, [evt.target.name]: evt.target.value })
     }
 
-
-    // index
     const getTerpines = async () => {
         try {
             const response = await fetch('/api/terpines')
@@ -28,7 +26,7 @@ export default function Terpines() {
             console.error(error)
         }
     }
-    // delete
+
     const deleteTerpine = async (id) => {
         try {
             const response = await fetch(`/api/terpines/${id}`, {
@@ -43,7 +41,7 @@ export default function Terpines() {
             console.error(error)
         }
     }
-    // update
+
     const updateTerpine = async (id, updatedData) => {
         try {
             const response = await fetch(`/api/terpines/${id}`, {
@@ -63,7 +61,7 @@ export default function Terpines() {
             console.error(error)
         }
     }
-    // create
+
     const createTerpine = async () => {
         try {
             const response = await fetch(`/api/terpines`, {
@@ -101,31 +99,25 @@ export default function Terpines() {
                     <Table key={terpine._id}>
                           <thead>
     <tr>
-   
-      <th>Terpine Name</th>
+   <th>Terpine Name</th>
       <th>Nose</th>
       <th>Properties</th>
       <th>Strains</th>
     </tr>
    </thead>
    <tbody>
-    <tr> </tr> 
-
-
-                        <td>{terpine.name}</td>
+<td>{terpine.name}</td>
                         <td>{terpine.nose}</td>
                         <td>{terpine.properties}</td>
                         <td>{terpine.strains}</td>
-                 
-                
-                
                 </tbody> 
                    </Table>
                 ))
-                    : <>No New Terpoines Found </>
+                    : <>No New Terpines Found </>
             }
-            <hr></hr>
-
-        </>
+             </>
     )
 }
+
+
+       

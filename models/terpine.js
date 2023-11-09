@@ -5,7 +5,8 @@ const terpineSchema = new Schema({
   name: { type: String },
   nose: [{ type: String }],
   properties: [{ type: String }],
-  strains: [{ type: String }]
+  strains: [{ type: String }],
+  altsources: [{ type: String }]
 })
 
 // Make A Model From The Schema

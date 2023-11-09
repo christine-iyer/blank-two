@@ -1,4 +1,5 @@
 import Table from '../components/Table/Table'
+import TableTwo from '../components/Table/TableTwo'
 import terpines from "../terpines.png"
 
 const ResourcePage = () => {
@@ -48,6 +49,7 @@ const ResourcePage = () => {
      </div>
      <div>
    <Table data={terpines}/>
+
      </div>
      </div>
      

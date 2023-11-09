@@ -1,4 +1,4 @@
-import './App.css';
+import '../../App.css'
  
 // Example of a data array that
 // you might receive from an API

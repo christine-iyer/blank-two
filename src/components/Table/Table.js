@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Table } from 'react-bootstrap';
 import '../../App.css'
 
-const colNames = ["Strain Name", "Nose", "Properties", "Strains"]
+const colNames = ["Strain Name", "Nose", "Properties", "Strains", "Alt Sources"]
 export default function Terpines() {
     const [terpines, setTerpines] = useState([])
     const [foundTerpine, setFoundTerpine] = useState(null)
@@ -10,7 +10,8 @@ export default function Terpines() {
         name: '',
         nose: '',
         properties: '',
-        strains: ''
+        strains: '',
+        altsources: ''
     })
 
     const handleChange = (evt) => {
@@ -77,7 +78,8 @@ export default function Terpines() {
                 name: '',
                 nose: '',
                 properties: '',
-                strains: ''
+                strains: '',
+                altsources: ''
             })
         } catch (error) {
             console.error(error)
@@ -93,31 +95,34 @@ export default function Terpines() {
             {'Nose '}<input value={terpine.nose} onChange={handleChange} name="nose"></input><br />
             {'Properties '}<input value={terpine.properties} onChange={handleChange} name="properties"></input><br />
             {'Strains '}<input value={terpine.strains} onChange={handleChange} name="strains"></input><br />
+            {'Other Sources '}<input value={terpine.altsources} onChange={handleChange} name="altsources"></input><br />
+
             <button onClick={() => createTerpine()}>Create A New New Acct</button>
             {
                 terpines.length ? terpines.map(terpine => (
                     <Table key={terpine._id}>
-                          <thead>
-    <tr>
-   <th>Terpine Name</th>
-      <th>Nose</th>
-      <th>Properties</th>
-      <th>Strains</th>
-    </tr>
-   </thead>
-   <tbody>
-<td>{terpine.name}</td>
-                        <td>{terpine.nose}</td>
-                        <td>{terpine.properties}</td>
-                        <td>{terpine.strains}</td>
-                </tbody> 
-                   </Table>
+                        <thead>
+                            <tr>
+                                <th>Terpine Name</th>
+                                <th>Nose</th>
+                                <th>Properties</th>
+                                <th>Strains</th>
+                                <th>Other Sources</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>{terpine.name}</td>
+                            <td>{terpine.nose}</td>
+                            <td>{terpine.properties}</td>
+                            <td>{terpine.strains}</td>
+                            <td>{terpine.altsources}</td>
+                        </tbody>
+                    </Table>
                 ))
                     : <>No New Terpines Found </>
             }
-             </>
+        </>
     )
 }
 
 
-       

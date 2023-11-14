@@ -12,8 +12,7 @@ const App = () => {
     <div>
        <BrowserRouter>
       <NavBar />
-
-      <Routes>
+       <Routes>
         <Route path='/bookmarks' element = {<BookmarkPage />}/>
         <Route path='/about' element = {<AboutPage />}/>
         <Route path='/faq' element = {<FaqPage />}/>
@@ -25,4 +24,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

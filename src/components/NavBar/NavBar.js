@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
+import '../../App.css'
 
 
 export default function NavBar() {
   return (
     <nav className='nav'>
-      <Link to="/bookmarks">Bookmarks Page</Link>
+      <Link className='link' to="/bookmarks">🔖</Link>
       &nbsp; | &nbsp;
-      <Link to="/about">About Us</Link>
+      <Link className='link' to="/about">🍄</Link>
       &nbsp; | &nbsp;
-      <Link to="/faq">FAQs</Link>
+      <Link className='link' to="/faq">🦀</Link>
 &nbsp; | &nbsp;
-      <Link to="/resources">Resources Page</Link>
+      <Link className='link' to="/resources">►</Link>
       
       
     </nav>

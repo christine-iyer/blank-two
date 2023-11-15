@@ -1,24 +1,26 @@
-
 import BookmarkImage from '../BookmarkImage/BookmarkImage'
 
-export default function BookmarkGallery ({
-  bookmarks
+export default function BookmarkList ({
+  bookmarks,
+  updateBookmark,
+  deleteBookmark
 }) {
   return (
-    <div>
+    <ul>
       {
             bookmarks.length
               ? bookmarks.map(bookmark => (
-               <BookmarkImage  key={bookmark._id}>
-               
-               </BookmarkImage>
-
-
+                <BookmarkI
+                  key={bookmark._id}
+                  bookmark={bookmark}
+                  updateBookmark={updateBookmark}
+                  deleteBookmark={deleteBookmark}
+                />
               ))
               : <>
                 <h2>No Bookmarks Yet... Add one in the Form Above</h2>
                 </>
         }
-    </div>
+    </ul>
   )
 }

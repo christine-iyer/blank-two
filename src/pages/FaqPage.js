@@ -1,9 +1,9 @@
 import React from 'react'
-import BookmarkGallery from '../components/BookmarkGallery/BookmarkGallery'
+import BookmarkImage from '../components/BookmarkImage/BookmarkImage'
 const FaqPage = () => {
   return (
     <div>
-      <BookmarkGallery />
+      <BookmarkImage />
     </div>
   )
 }

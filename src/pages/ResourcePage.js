@@ -1,6 +1,6 @@
-import Table from '../components/Table/Table'
-import TableTwo from '../components/Table/TableTwo'
-import terpines from "../terpines.png"
+// import Table from '../components/Table/Table'
+// //import TableTwo from '../components/Table/TableTwo'
+// import terpines from "../terpines.png"
 
 const ResourcePage = () => {
 
@@ -38,9 +38,9 @@ const ResourcePage = () => {
      <li>Cymene: Nose - carrots also orange, tangerine, oregano. Properties - anti-inflammatory and pain relief.</li>
 </ul>
 
-<div>
+{/* <div>
      <img src={terpines} alt=""></img>
-</div>
+</div> */}
    Sources:
    <br></br>
 <a href="https://cannaflower.com/complete-list-terpenes/">A Definitive List of Cannabis-Derives Terpines. </a>
@@ -48,7 +48,7 @@ const ResourcePage = () => {
      <a href="https://cannacon.org/15-terpenes-cannabis-explained/">15 terpenes in cannabis explained [Updated 2023]</a>
      </div>
      <div>
-   <Table data={terpines}/>
+   {/* <Table data={terpines}/> */}
 
      </div>
      </div>

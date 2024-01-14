@@ -22,7 +22,7 @@ export default function BookmarkPage () {
   })
   const [bookmarks, setBookmarks] = useState([])
 
-  const [foundBookmarks, setFoundBookmarks] = useState(null)
+  // const [foundBookmarks, setFoundBookmarks] = useState(null)
 
   const [token, setToken] = useState('')
   const login = async () => {
@@ -122,7 +122,7 @@ export default function BookmarkPage () {
         body: JSON.stringify(updatedData)
       })
       const data = await response.json()
-      setFoundBookmarks(data)
+      // setFoundBookmarks(data)
       const bookmarksCopy = [...bookmarks]
       const index = bookmarksCopy.findIndex(bookmark => id === bookmark._id)
       bookmarksCopy[index] = { ...bookmarksCopy[index], ...updatedData }
@@ -137,7 +137,7 @@ export default function BookmarkPage () {
     if (tokenData && tokenData !== 'null' && tokenData !== 'undefined') {
       listBookmarksByUser()
     }
-  }, [])
+  }, [token])
 
   useEffect(() => {
     const tokenData = localStorage.getItem('token')
@@ -160,6 +160,8 @@ export default function BookmarkPage () {
       />
       <BookmarkList
         bookmarks={bookmarks}
+        deleteBookmark={deleteBookmark}
+        updateBookmark={updateBookmark}
       />
 
     </>

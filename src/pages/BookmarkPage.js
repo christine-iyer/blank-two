@@ -22,6 +22,8 @@ export default function BookmarkPage () {
   })
   const [bookmarks, setBookmarks] = useState([])
 
+  const [foundBookmarks, setFoundBookmarks] = useState(null)
+
   const [token, setToken] = useState('')
   const login = async () => {
     try {
@@ -120,6 +122,7 @@ export default function BookmarkPage () {
         body: JSON.stringify(updatedData)
       })
       const data = await response.json()
+      setFoundBookmarks(data)
       const bookmarksCopy = [...bookmarks]
       const index = bookmarksCopy.findIndex(bookmark => id === bookmark._id)
       bookmarksCopy[index] = { ...bookmarksCopy[index], ...updatedData }

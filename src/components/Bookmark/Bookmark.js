@@ -4,7 +4,7 @@ import  Button  from 'react-bootstrap/Button'
 import '../../App.css'
 
 export default function Bookmark ({
-  bookmark,
+  foundBookmarks,
   updateBookmark,
   deleteBookmark
 }) {
@@ -13,25 +13,26 @@ export default function Bookmark ({
   return (
     <>
       <Card style={{ width: '18rem', margin: '2rem' }}>
-        <h4 onClick={() => setShowInput(!showInput)}>{bookmark.title}</h4>
+        <h4 onClick={() => setShowInput(!showInput)}>{foundBookmarks.title}</h4>
         <input
           ref={inputRef}
           style={{ display: showInput ? 'block' : 'none' }}
           type='text'
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
-              const title = inputRef.current.value
-              updateBookmark(bookmark._id, { title })
+              e.preventDefault()
+              // const title = inputRef.current.value
+              updateBookmark(foundBookmarks._id, { title: e.target.value })
               setShowInput(false)
-              console.log(title)
+            
             }
           }}
-          defaultValue={bookmark.title}
+          defaultValue={foundBookmarks.title}
         />
-        <a href={bookmark.url} target='_blank' rel='noreferrer'>
-           {bookmark.title}</a>
+        <a href={foundBookmarks.url} target='_blank' rel='noreferrer'>
+           {foundBookmarks.title}</a>
         <Button style={{  marginLeft:'28%', marginRight:'32%',justifyContent: 'center', padding: '1rem', marginBottom: '5%', marginTop: '5%' }}
-          onClick={() => deleteBookmark(bookmark._id)}
+          onClick={() => deleteBookmark(foundBookmarks._id)}
         >
           Delete Me
         </Button>

@@ -1,4 +1,5 @@
 import Bookmark from '../Bookmark/Bookmark'
+import Gallery from '../BookmarkGallery/BookmarkGallery'
 
 export default function BookmarkList ({
   bookmarks,
@@ -6,7 +7,7 @@ export default function BookmarkList ({
   deleteBookmark
 }) {
   return (
-    <ul>
+    <div>
       {
             bookmarks.length
               ? bookmarks.map(bookmark => (
@@ -21,6 +22,6 @@ export default function BookmarkList ({
                 <h2>No Bookmarks Yet... Add one in the Form Above</h2>
                 </>
         }
-    </ul>
+    </div>
   )
 }

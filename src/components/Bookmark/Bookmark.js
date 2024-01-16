@@ -9,8 +9,8 @@ export default function Bookmark ({
   const inputRef = useRef(null)
   return (
     <>
-      <li style={{listStyle:'none'}}>
-        <h4 onClick={() => setShowInput(!showInput)}>{bookmark.title}</h4>
+       <li style={{listStyle:'none'}}>
+       {/* <h4 onClick={() => setShowInput(!showInput)}>{bookmark.title}</h4>
         <input
           ref={inputRef}
           style={{ display: showInput ? 'block' : 'none' }}
@@ -23,14 +23,14 @@ export default function Bookmark ({
             }
           }}
           defaultValue={bookmark.title}
-        />
+        /> */}
         <img style={{ "borderRadius": "5%", "objectFit": "contain", "width": "100%", "height": "15vw" }} src={bookmark.url} alt={bookmark.title} />
        
-        <button
+        {/* <button
           onClick={() => deleteBookmark(bookmark._id)}
         >
           Delete Me
-        </button>
+        </button> */}
       </li>
     </>
   )

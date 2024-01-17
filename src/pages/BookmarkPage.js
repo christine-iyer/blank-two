@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import React from 'react';
-import ImageGallery from 'react-image-gallery';
 import Auth from '../components/Auth/Auth'
 import CreateBookmark from '../components/CreateBookmark/CreateBookmark'
 import BookmarkList from '../components/BookmarkList/BookmarkList'
@@ -134,6 +132,11 @@ export default function BookmarkPage () {
       console.error(error)
     }
   }
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
 
   useEffect(() => {
     const tokenData = localStorage.getItem('token')
@@ -166,6 +169,7 @@ export default function BookmarkPage () {
         deleteBookmark={deleteBookmark}
         updateBookmark={updateBookmark}
       />
+      
       {/* <ImageGallery
       bookmarks={bookmarks} items={bookmarks.url} showPlayButton={false} showFullscreenButton={false} slideDuration={500} /> */}
 

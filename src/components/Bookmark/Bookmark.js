@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { Carousel } from 'react-bootstrap'
 
 export default function Bookmark ({
   bookmark,
@@ -24,8 +25,9 @@ export default function Bookmark ({
           }}
           defaultValue={bookmark.title}
         /> */}
+        <Carousel.Item>
         <img style={{ "borderRadius": "5%", "objectFit": "contain", "width": "100%", "height": "15vw" }} src={bookmark.url} alt={bookmark.title} />
-       
+       </Carousel.Item>
         {/* <button
           onClick={() => deleteBookmark(bookmark._id)}
         >

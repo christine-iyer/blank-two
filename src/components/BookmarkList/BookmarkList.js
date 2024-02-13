@@ -25,6 +25,7 @@ export default function BookmarkList ({
                 <Bookmark
                   key={bookmark._id}
                   bookmark={bookmark}
+                  handleSelect={handleSelect}
                   updateBookmark={updateBookmark}
                   deleteBookmark={deleteBookmark}
                 />

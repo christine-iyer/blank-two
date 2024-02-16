@@ -15,7 +15,7 @@ export default function BookmarkList ({
 
 
   return (
-    <div>
+    <div style={{width:'10%', display:"flex",flexWrap:"wrap", margin: '1rem'}}>
       {
             bookmarks.length
               ? bookmarks.map(bookmark => (
